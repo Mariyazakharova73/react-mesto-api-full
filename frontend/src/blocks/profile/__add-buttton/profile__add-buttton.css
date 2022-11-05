@@ -1,0 +1,29 @@
+.profile__add-buttton {
+  background: transparent;
+  background-image: url(../../../images/profile-add-buttton.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 22px;
+  max-width: 150px;
+  width: 100%;
+  min-height: 50px;
+  margin-left: auto;
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
+  box-sizing: border-box;
+  transition: opacity .5s linear;
+  padding: 0;
+}
+
+.profile__add-buttton:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .profile__add-buttton {
+    margin-left: 0;
+    max-width: 282px;
+    background-size: 16px 16px;
+  }
+}

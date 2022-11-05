@@ -1,0 +1,13 @@
+.header__wrapper-text {
+  display: flex;
+  gap: 24px;
+  height: 33px;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header__wrapper-text {
+    flex-direction: column;
+    gap: 10px
+  }
+}

@@ -1,0 +1,27 @@
+.profile__avatar-wrapper {
+  margin-right: 30px;
+  position: relative;
+}
+
+@media screen and (max-width: 1050px) {
+  .profile__avatar-wrapper {
+    margin-right: 0;
+    margin-bottom: 26px;
+  }
+}
+
+.profile__avatar-wrapper:hover:before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(../../../images/profile-edit-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 26px;
+}

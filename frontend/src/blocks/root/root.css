@@ -1,0 +1,15 @@
+.root {
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  font-style: normal;
+  /* Сглаживание */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Подгонка размера текста */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  /* Рендеринг */
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}

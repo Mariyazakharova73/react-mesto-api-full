@@ -1,0 +1,13 @@
+.login__input-error_active {
+  color: red;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  position: absolute;
+  top: 36px;
+  left: 0;
+}
+
+.login__input-error_active:nth-of-type(2) {
+  top: 120px;
+}

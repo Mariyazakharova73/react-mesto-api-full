@@ -1,0 +1,9 @@
+.gallery__card-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  min-height: 79px;
+  padding: 20px 20px 20px 21px;
+  box-sizing: border-box;
+}
