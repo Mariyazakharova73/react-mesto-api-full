@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger); // подключаем логгер запросов
-app.use(corsSetting);
+// app.use(corsSetting);
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateUser, createUser);
 app.use(auth, usersRouter);
