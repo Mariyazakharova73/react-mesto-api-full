@@ -6,7 +6,7 @@ function Card({ onImageClick, onCardLike, onTrashClick }) {
   const currentUser = React.useContext(CurrentUserContext);
   const card = React.useContext(CardContext);
 
-  const isOwn = card.owner._id === currentUser._id;
+  const isOwn = card.owner === currentUser._id;
   const cardDeleteButtonClassName = `gallery__button-delete ${
     isOwn ? '' : 'gallery__button-delete_hidden'
   }`;
