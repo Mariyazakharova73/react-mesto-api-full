@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-const cors = require('cors');
+// const cors = require('cors');
 const { errors } = require('celebrate');
 const usersRouter = require('./routes/usersRouter');
 const cardsRouter = require('./routes/cardsRouter');
@@ -11,15 +11,17 @@ const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 const { validateLogin, validateUser } = require('./utils/validation');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const corsSetting = require('./middlewares/cors-setting');
 
 const { PORT = 3000 } = process.env;
 const app = express();
 // пишем выше роутинга
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger); // подключаем логгер запросов
-app.use(cors());
+app.use(corsSetting);
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateUser, createUser);
 app.use(auth, usersRouter);
