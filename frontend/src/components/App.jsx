@@ -86,7 +86,6 @@ function App() {
       auth
         .getContent(jwt)
         .then((res) => {
-          console.log(res);
           if (res) {
             setEmail(res.email);
             // авторизуем пользователя
