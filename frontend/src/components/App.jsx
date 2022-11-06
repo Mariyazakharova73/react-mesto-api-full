@@ -80,6 +80,7 @@ function App() {
   }
 
   React.useEffect(() => {
+    console.log(loggedIn)
     if (loggedIn) {
       setLoading(true);
       Promise.all([api.getProfile(), api.getInitialCards()])
