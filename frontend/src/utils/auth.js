@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.mestozakharova.nomoredomains.icu/';
+export const BASE_URL = 'https://api.mestozakharova.nomoredomains.icu';
 
 const request = ({ url, method = 'POST', token, data }) => {
   return fetch(`${BASE_URL}${url}`, {
