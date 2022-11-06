@@ -46,6 +46,8 @@ function App() {
     return auth
       .authorize(email, password)
       .then((data) => {
+        console.log(data)
+        console.log(data.token)
         localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
         setMessage('Вы успешно авторизировались');
