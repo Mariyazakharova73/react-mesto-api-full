@@ -46,8 +46,6 @@ function App() {
     return auth
       .authorize(email, password)
       .then((data) => {
-        console.log(data)
-        console.log(data.token)
         localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
         setMessage('Вы успешно авторизировались');
@@ -82,7 +80,29 @@ function App() {
   }
 
   React.useEffect(() => {
-    console.log(loggedIn)
+    function tokenCheck() {
+      const jwt = localStorage.getItem('jwt');
+      if (!jwt) return;
+      auth
+        .getContent(jwt)
+        .then((res) => {
+          console.log(res);
+          if (res) {
+            setEmail(res.email);
+            // авторизуем пользователя
+            setLoggedIn(true);
+            history.push('/');
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    tokenCheck();
+  }, [loggedIn]);
+
+  React.useEffect(() => {
     if (loggedIn) {
       setLoading(true);
       Promise.all([api.getProfile(), api.getInitialCards()])
@@ -99,28 +119,6 @@ function App() {
     }
   }, [loggedIn]);
 
-  React.useEffect(() => {
-    function tokenCheck() {
-      const jwt = localStorage.getItem('jwt');
-      if (!jwt) return;
-      auth
-        .getContent(jwt)
-        .then((res) => {
-          console.log(res)
-          if (res) {
-            setEmail(res.email);
-            // авторизуем пользователя
-            setLoggedIn(true);
-            history.push('/');
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-
-    tokenCheck();
-  }, [loggedIn]);
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
