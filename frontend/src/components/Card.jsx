@@ -12,7 +12,7 @@ function Card({ onImageClick, onCardLike, onTrashClick }) {
   }`;
 
   // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
-  const isLiked = card.likes.some((i) => i._id === currentUser._id);
+  const isLiked = card.likes.some((i) => i === currentUser._id);
 
   const cardLikeButtonClassName = `button-like ${isLiked ? 'button-like_active' : ''}`;
 
